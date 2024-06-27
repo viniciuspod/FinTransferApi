@@ -23,11 +23,20 @@ public class Transferencia {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sqteste")
     private Long id;
+
     private String contaOrigem;
+
     private String contaDestino;
+
     private Double valor;
+
+    private Double valorTaxa;
+
+    private Double taxa;
+
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private LocalDateTime dtAgendamento;
+
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private LocalDateTime dtTransferencia;
 }

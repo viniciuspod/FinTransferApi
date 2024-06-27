@@ -27,7 +27,7 @@ public class TransferenciaController {
         try {
             transferenciaService.saveTransferencia(transfRequest);
             return ResponseEntity.ok().body(new ApiResponse(true, "Operacao realizada com sucesso"));
-        }catch (DataAccessException e){
+        }catch (RuntimeException e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiResponse(false, "ERRO: " + e.getMessage()));
         }
     }
